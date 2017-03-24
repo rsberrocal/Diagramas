@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Empresa">
+  <ClassDiagramComponents>
+    <Class name="Empresa" package="" visibility="public" xPosition="440.0" yPosition="12.0">
+      <Fields>
+        <Field name="emp" type="Empleats" visibility="private"/>
+        <Field name="cli" type="Clients" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Clients" package="" visibility="public" xPosition="615.0" yPosition="219.0">
+      <Fields>
+        <Field name="tel" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="mostraDadesCli" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Empleats" package="" visibility="public" xPosition="256.0" yPosition="219.0">
+      <Fields>
+        <Field name="souBrut" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="mostraDadesEmp" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Personas" package="" visibility="public" xPosition="440.0" yPosition="433.0">
+      <Fields>
+        <Field name="Nom" type="String" visibility="private"/>
+        <Field name="Edat" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="mostraDades" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Directiu" package="" visibility="public" xPosition="49.0" yPosition="385.0">
+      <Fields>
+        <Field name="Categoria" type="int" visibility="private"/>
+        <Field name="emp" type="List" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="mostraDadesEmp" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="Empresa-Clients" source="Empresa" target="Clients" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+    <IsRelation name="is" source="Directiu" target="Empleats"/>
+    <IsRelation name="is" source="Empleats" target="Personas"/>
+    <IsRelation name="is" source="Clients" target="Personas"/>
+    <HasRelation name="Empresa-Empleat" source="Empresa" target="Empleats" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

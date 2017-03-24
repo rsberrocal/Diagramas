@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Clients" package="" visibility="public" xPosition="821.0" yPosition="167.0">
+      <Fields>
+        <Field name="tel" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="mostraDadesCli" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Directiu" package="" visibility="public" xPosition="82.0" yPosition="158.0">
+      <Fields>
+        <Field name="Categoria" type="int" visibility="private"/>
+        <Field name="emp" type="List&lt;Empleats&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="mostraDadesEmp" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Empleats" package="" visibility="public" xPosition="355.0" yPosition="150.0">
+      <Fields>
+        <Field name="souBrut" type="double" visibility="private"/>
+        <Field name="directiu" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="mostraDadesEmp" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Empresa" package="" visibility="public" xPosition="562.0" yPosition="2.0">
+      <Fields>
+        <Field name="emp" type="Empleats" visibility="private"/>
+        <Field name="cli" type="Clients" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Personas" package="" visibility="public" xPosition="625.0" yPosition="372.0">
+      <Fields>
+        <Field name="Nom" type="String" visibility="private"/>
+        <Field name="Edat" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="mostraDades" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Empleats" target="Personas"/>
+    <IsRelation name="is" source="Directiu" target="Empleats"/>
+    <HasRelation name="emp" source="Empresa" target="Empleats" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cli" source="Empresa" target="Clients" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Clients" target="Personas"/>
+    <HasRelation name="emp" source="Directiu" target="Empleats" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Empleats&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
