@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="UMLEjemplo1">
+  <ClassDiagramComponents>
+    <Class name="UntitledClass" package="" visibility="public" xPosition="62.0" yPosition="89.0">
+      <Fields>
+        <Field name="num1" type="int" visibility="private"/>
+        <Field name="num2" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="multiplica" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
