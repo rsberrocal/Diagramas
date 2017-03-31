@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Biblioteca">
+  <ClassDiagramComponents>
+    <Class name="Libros" package="" visibility="public" xPosition="723.0" yPosition="183.0">
+      <Fields>
+        <Field name="Nombre" type="String" visibility="private"/>
+        <Field name="Tipos" type="int" visibility="private"/>
+        <Field name="Editorial" type="String" visibility="private"/>
+        <Field name="Ano" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Autores" package="" visibility="public" xPosition="812.0" yPosition="442.0">
+      <Fields>
+        <Field name="Nombre" type="String" visibility="private"/>
+        <Field name="Nacionalidad" type="String" visibility="private"/>
+        <Field name="Nacimiento" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Lectores" package="" visibility="public" xPosition="40.0" yPosition="200.0">
+      <Fields>
+        <Field name="Nombre" type="String" visibility="private"/>
+        <Field name="DNI" type="int" visibility="private"/>
+        <Field name="Multado" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="PrestamoDevolucion" package="" visibility="public" xPosition="281.0" yPosition="8.0">
+      <Fields>
+        <Field name="diasPrestamo" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="nuevoPrestamo" returnType="void" visibility="public">
+          <Argument type="Lectores" name="Le"/>
+          <Argument type="Ejemplares" name="ej"/>
+        </Method>
+        <Method name="ponerMulta" returnType="void" visibility="public">
+          <Argument type="Lectores" name="Le"/>
+        </Method>
+        <Method name="devolucion" returnType="void" visibility="public">
+          <Argument type="Lectores" name="Le"/>
+          <Argument type="Ejemplares" name="ej"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Ejemplares" package="" visibility="public" xPosition="723.0" yPosition="25.0">
+      <Fields>
+        <Field name="id_Ejemplar" type="int" visibility="private"/>
+        <Field name="Estado" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="Biblioteca-Lectores" source="PrestamoDevolucion" target="Lectores" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <IsRelation name="is" source="Ejemplares" target="Libros"/>
+    <HasRelation name="PD-Ejemplares" source="PrestamoDevolucion" target="Ejemplares" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="Libros-Autores" source="Libros" target="Autores" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="Biblioteca-Libros" source="Biblioteca" target="Libros" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
